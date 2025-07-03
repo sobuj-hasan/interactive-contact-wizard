@@ -37,11 +37,10 @@ const FormField = forwardRef<HTMLInputElement, FormFieldProps & React.InputHTMLA
             {...props}
           />
           <label className={`
-            absolute left-${icon ? '10' : '4'} top-1/2 transform -translate-y-1/2 
-            text-slate-500 transition-all duration-200 pointer-events-none
-            peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2
-            peer-focus:text-xs peer-focus:top-2 peer-focus:text-blue-600
-            ${hasValue ? 'text-xs top-2 text-blue-600' : 'text-base top-1/2'}
+            absolute ${icon ? 'left-10' : 'left-4'} transform transition-all duration-200 pointer-events-none
+            peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2
+            peer-focus:text-xs peer-focus:top-2 peer-focus:translate-y-0 peer-focus:text-blue-600
+            ${hasValue ? 'text-xs top-2 translate-y-0 text-blue-600' : 'text-base top-1/2 -translate-y-1/2 text-slate-500'}
           `}>
             {label}
           </label>
